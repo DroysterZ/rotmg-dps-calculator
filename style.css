@@ -43,7 +43,8 @@ body {
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
+  min-height: 0;
 }
 
 #sidebar-header {
@@ -111,6 +112,7 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   transition: border-color 0.15s;
+  flex-shrink: 0;
 }
 
 .build-card:hover { border-color: var(--border-bright); }
