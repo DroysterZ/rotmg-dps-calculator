@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoTMG DPS Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">⚔ ROT<span>MG</span> DPS</div>
+    </div>
+    <div id="builds-container"></div>
+    <button id="add-build-btn" onclick="addBuild()">＋ Add Build</button>
+  </div>
+
+  <!-- MAIN -->
+  <div id="main">
+    <div id="chart-controls">
+      <div class="ctrl-group">
+        <label>DEF Start</label>
+        <input type="number" id="def-start" value="0" min="-100" max="1000" step="1" oninput="updateChart()">
+      </div>
+      <div class="ctrl-group">
+        <label>DEF End</label>
+        <input type="number" id="def-end" value="100" min="0" max="2000" step="1" oninput="updateChart()">
+      </div>
+      <div class="ctrl-group">
+        <label>Step</label>
+        <input type="number" id="def-step" value="1" min="1" max="100" step="1" oninput="updateChart()">
+      </div>
+      <div id="chart-title">Damage per Second</div>
+    </div>
+
+    <div id="global-buffs-bar">
+      <span class="gbl-label">Global</span>
+      <button class="buff-toggle" data-buff="armored"     onclick="toggleGlobalBuff('armored',this)">Armored</button>
+      <button class="buff-toggle" data-buff="armorBroken" onclick="toggleGlobalBuff('armorBroken',this)">Armor Broken</button>
+      <button class="buff-toggle" data-buff="cursed"      onclick="toggleGlobalBuff('cursed',this)">Cursed</button>
+      <button class="buff-toggle" data-buff="exposed"     onclick="toggleGlobalBuff('exposed',this)">Exposed</button>
+      <button class="buff-toggle" data-buff="berserk"     onclick="toggleGlobalBuff('berserk',this)">Berserk</button>
+      <button class="buff-toggle" data-buff="damaging"    onclick="toggleGlobalBuff('damaging',this)">Damaging</button>
+    </div>
+
+    <div id="chart-wrap">
+      <div id="empty-state">
+        <div class="icon">📊</div>
+        <div>Add a build to see DPS</div>
+      </div>
+      <canvas id="dps-chart"></canvas>
+    </div>
+  </div>
+
+  <!-- Entry point: type="module" enables ES module imports across all JS files -->
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
