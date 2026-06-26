@@ -2,7 +2,7 @@
 //  Chart Rendering
 // ─────────────────────────────────────────────
 import { calcDPS } from './calc.js';
-import { state }   from './main.js';
+import { state }   from './state.js';   // ← was './main.js' (caused circular dep)
 
 let _chart = null;
 

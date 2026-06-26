@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────
 import { CLASSES, WEAPONS, SPECIALS, ARMORS, RINGS } from './data/index.js';
 import { getEquipBonuses } from './calc.js';
-import { state } from './main.js';
+import { state } from './state.js';      // ← was './main.js' (caused circular dep)
 import { updateChart } from './chart.js';
 
 const STAT_KEYS = ['hp', 'mp', 'att', 'def', 'spd', 'dex', 'vit', 'wis'];

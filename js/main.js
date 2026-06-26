@@ -1,8 +1,9 @@
 // ─────────────────────────────────────────────
-//  Main — Application State & Entry Point
+//  Main — Application Entry Point
 // ─────────────────────────────────────────────
 import { WEAPONS, SPECIALS, ARMORS, RINGS } from './data/index.js';
 import { registerItems } from './calc.js';
+import { updateChart } from './chart.js';
 import {
   addBuild, removeBuild, toggleCollapse,
   onNameChange, onColorChange, onClassChange,
@@ -10,17 +11,9 @@ import {
   toggleBuff, toggleGlobalBuff,
 } from './ui.js';
 
-// ── Shared mutable state ─────────────────────
-// Exported so calc.js and ui.js can read/write it without prop-drilling.
-export const state = {
-  builds:       [],
-  buildCounter: 0,
-  globalBuffs: {
-    armored: null, armorBroken: null,
-    cursed:  null, exposed:     null,
-    berserk: null, damaging:    null,
-  },
-};
+// Re-export state for any module that still needs it via main.js
+// (kept for backwards compatibility, but prefer importing from ./state.js directly).
+export { state } from './state.js';
 
 // ── Bootstrap ────────────────────────────────
 
@@ -34,8 +27,8 @@ Object.assign(window, {
   onNameChange, onColorChange, onClassChange,
   onEquipChange, onStatChange,
   toggleBuff, toggleGlobalBuff,
-  updateChart: (await import('./chart.js')).updateChart,
+  updateChart,
 });
 
-// Start with one empty build
+// Start with one empty build.
 addBuild();
