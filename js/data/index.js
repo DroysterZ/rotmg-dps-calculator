@@ -11,26 +11,57 @@
 
 export { CLASSES } from './classes.js';
 
-// ── Weapons ──────────────────────────────────
+// ── Weapons Tiered ──────────────────────────────────
+import { DAGGER_TIERED }  from './weapons/dagger/dagger.tiered.js';
+import { DUALBLADE_TIERED }  from './weapons/dualblade/dualblade.tiered.js';
+
 import { STAFF_TIERED }   from './weapons/staff/staff.tiered.js';
-import { STAFF_UT }       from './weapons/staff/staff.ut.js';
+import { SPELLBLADE_TIERED }    from './weapons/spellblade/spellblade.tiered.js';
+
+import { SWORD_TIERED }   from './weapons/sword/sword.tiered.js';
+import { FLAIL_TIERED }   from './weapons/flail/flail.tiered.js';
+
 import { BOW_TIERED }     from './weapons/bow/bow.tiered.js';
 import { LONGBOW_TIERED } from './weapons/longbow/longbow.tiered.js';
-import { SWORD_TIERED }   from './weapons/sword/sword.tiered.js';
-import { DAGGER_TIERED }  from './weapons/dagger/dagger.tiered.js';
+
 import { WAND_TIERED }    from './weapons/wand/wand.tiered.js';
+import { MORNINGSTAR_TIERED }    from './weapons/morningstar/morningstar.tiered.js';
+
 import { KATANA_TIERED }  from './weapons/katana/katana.tiered.js';
+import { TACHI_TIERED }  from './weapons/tachi/tachi.tiered.js';
+
+// ── Weapons UT ──────────────────────────────────
+// import { STAFF_UT }       from './weapons/staff/staff.ut.js';
+
+// ── Weapons ST ──────────────────────────────────
+// import { STAFF_UT }       from './weapons/staff/staff.st.js';
+
 
 export const WEAPONS = [
   { id: 'none', class: 'weapon', name: 'None', projectiles: [], canEquip: null },
+  // tiered
+  ...DAGGER_TIERED,
+  ...DUALBLADE_TIERED,
+  
   ...STAFF_TIERED,
-  ...STAFF_UT,
+  ...SPELLBLADE_TIERED,
+  
+  ...SWORD_TIERED,
+  ...FLAIL_TIERED,
+
   ...BOW_TIERED,
   ...LONGBOW_TIERED,
-  ...SWORD_TIERED,
-  ...DAGGER_TIERED,
+
   ...WAND_TIERED,
+  ...MORNINGSTAR_TIERED,
+
   ...KATANA_TIERED,
+  ...TACHI_TIERED,
+
+  // ut
+  // ...STAFF_UT,
+
+  // st
 ];
 
 // ── Armors ───────────────────────────────────
