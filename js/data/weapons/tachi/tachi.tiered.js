@@ -2,7 +2,7 @@
 //  Weapons › Tachi › Tiered
 // ─────────────────────────────────────────────
 
-export const KENSEI_TIERED = [
+export const TACHI_TIERED = [
 	{
 		id: 'tachi_t7',
 		class: 'tachi',

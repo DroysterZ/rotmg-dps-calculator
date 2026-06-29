@@ -2,7 +2,7 @@
 //  Weapons › Morning Star › Tiered
 // ─────────────────────────────────────────────
 
-export const WAND_TIERED = [
+export const MORNINGSTAR_TIERED = [
 	{
 		id: 'morningstar_t7',
 		class: 'morningstar',
