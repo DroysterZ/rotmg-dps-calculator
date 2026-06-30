@@ -1,8 +1,8 @@
 // ─────────────────────────────────────────────
-//  Weapons › Sword › Tiered
+//  Weapons › Sword › UT
 // ─────────────────────────────────────────────
 
-export const SWORD_TIERED = [
+export const SWORD_UT = [
 	{
 		id: 'sword_ut1',
 		class: 'sword',
