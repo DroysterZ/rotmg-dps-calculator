@@ -32,6 +32,7 @@ import { TACHI_TIERED }  from './weapons/tachi/tachi.tiered.js';
 
 // ── Weapons UT ──────────────────────────────────
 // import { STAFF_UT }       from './weapons/staff/staff.ut.js';
+import { SWORD_UT }   from './weapons/sword/sword.ut.js';
 
 // ── Weapons ST ──────────────────────────────────
 // import { STAFF_UT }       from './weapons/staff/staff.st.js';
@@ -60,6 +61,7 @@ export const WEAPONS = [
 
   // ut
   // ...STAFF_UT,
+  ...SWORD_UT,
 
   // st
 ];
